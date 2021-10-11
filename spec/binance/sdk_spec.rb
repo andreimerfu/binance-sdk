@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-RSpec.describe Binance::Sdk do
+RSpec.describe Binance::SDK do
   it "has a version number" do
-    expect(Binance::Sdk::VERSION).not_to be nil
+    expect(Binance::SDK::VERSION).not_to be nil
   end
 end
