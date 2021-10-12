@@ -58,7 +58,7 @@ module Binance
             rescue JSON::ParserError => error
               # binance 500 errors are html format
 
-              raise Error.new(message: error)
+              raise Error.new(message: "Error: #{error}")
             end
           raise Error.localized(json[:code]).new(json: json) if Error.is_error_response?(response: response)
           json

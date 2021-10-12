@@ -4,8 +4,8 @@ module Binance
       class << self
         def put_order!(symbol:, type: 'TRAILING_STOP_MARKET', side: 'BUY', callback_rate: 4, quantity: 1.0, working_type: nil, position_side: 'BOTH')
           params = {
-            recvWindow: 5000,
-            timestamp: Configuration.timestamp,
+            recvWindow: 60000,
+            timestamp: Configuration.timestamp.to_i - 1000,
             symbol: symbol,
             side: side,
             type: type,
@@ -23,10 +23,25 @@ module Binance
           )
         end
 
+        def cancel_order!(symbol:)
+          params = {
+            recvWindow: 60000,
+            timestamp: Configuration.timestamp.to_i - 1000,
+            symbol: symbol
+          }
+
+          Request.send!(
+            method: :delete,
+            api_key_type: :read_info, path: Endpoints.fetch(:put_order),
+            params: params.delete_if { |_, value| value.nil? },
+            security_type: :user_data, api_key: Configuration.api_key, api_secret_key: Configuration.secret_key
+          )
+        end
+
         def cancel_orders!(symbol:)
           params = {
-            recvWindow: 5000,
-            timestamp: Configuration.timestamp,
+            recvWindow: 60000,
+            timestamp: Configuration.timestamp.to_i - 1000,
             symbol: symbol
           }
 
@@ -44,7 +59,6 @@ module Binance
             leverage: leverage,
             timestamp: Configuration.timestamp
           }
-
 
           Request.send!(
             method: :post,

@@ -10,6 +10,7 @@ module Binance
 
         def future_endpoints
           {
+            server_time: '/fapi/v1/time',
             account_balance: '/fapi/v2/balance',
             account_position_risk: '/fapi/v2/positionRisk',
             exchange_info: '/fapi/v1/exchangeInfo',
@@ -23,6 +24,7 @@ module Binance
 
         def spot_endpoints
           {
+            server_time: '/sapi/v1/time',
             account_balance: '/sapi/v2/balance',
             account_position_risk: '/sapi/v2/positionRisk',
             exchange_info: '/sapi/v1/exchangeInfo',

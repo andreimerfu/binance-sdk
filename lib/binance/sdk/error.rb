@@ -51,7 +51,8 @@ module Binance
           when 2014 then BadAPIKeyFormat
           when 2015 then RejectedAPIKey
           when 2016 then NoTradingWindow
-          else Binance::Sdk::Error
+          when -4131 then CounterPartyBestPrice
+          else Binance::SDK::Error
           end
         end
       end
@@ -118,6 +119,7 @@ module Binance
       class BadAPIKeyFormat < Error; end
       class RejectedAPIKey < Error; end
       class NoTradingWindow < Error; end
+      class CounterPartyBestPrice < Error; end
     end
   end
 end
