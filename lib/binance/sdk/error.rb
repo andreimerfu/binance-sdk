@@ -45,6 +45,7 @@ module Binance
           when 1127 then IntervalTooLarge
           when 1128 then OptionalParamsBadCombo
           when 1130 then InvalidParameter
+          when 2007 then InvalidCallbackRate
           when 2010 then NewOrderRejected
           when 2011 then CancelOrderRejected
           when 2013 then NoSuchOrder
@@ -120,6 +121,7 @@ module Binance
       class RejectedAPIKey < Error; end
       class NoTradingWindow < Error; end
       class CounterPartyBestPrice < Error; end
+      class InvalidCallbackRate < Error; end
     end
   end
 end
