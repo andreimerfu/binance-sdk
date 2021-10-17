@@ -36,7 +36,7 @@ module Binance
 
         def positions
           params = {
-            recvWindow: 5000,
+            # recvWindow: 60000,
             timestamp: Configuration.timestamp
           }
 

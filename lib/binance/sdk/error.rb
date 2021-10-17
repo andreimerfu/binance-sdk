@@ -52,7 +52,9 @@ module Binance
           when 2014 then BadAPIKeyFormat
           when 2015 then RejectedAPIKey
           when 2016 then NoTradingWindow
+          when -1021 then TimestampOutsideRecvWindow
           when -4131 then CounterPartyBestPrice
+          when -4005 then QuantityGreaterThanMaxQuantity
           else Binance::SDK::Error
           end
         end
@@ -122,6 +124,8 @@ module Binance
       class NoTradingWindow < Error; end
       class CounterPartyBestPrice < Error; end
       class InvalidCallbackRate < Error; end
+      class QuantityGreaterThanMaxQuantity < Error; end
+      class TimestampOutsideRecvWindow < Error; end
     end
   end
 end
