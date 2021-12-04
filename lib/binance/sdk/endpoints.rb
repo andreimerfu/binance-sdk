@@ -18,7 +18,9 @@ module Binance
             put_order: '/fapi/v1/order',
             cancel_orders: '/fapi/v1/allOpenOrders',
             ticker_price: '/fapi/v1/ticker/price',
-            change_leverage: '/fapi/v1/leverage'
+            change_leverage: '/fapi/v1/leverage',
+            long_short_ratio: '/futures/data/globalLongShortAccountRatio',
+            taker_buy_sell_volume: '/futures/data/takerlongshortRatio'
           }
         end
 
@@ -31,7 +33,7 @@ module Binance
             klines: '/sapi/v1/klines',
             put_order: '/sapi/v1/order',
             cancel_orders: '/sapi/v1/allOpenOrders',
-            ticker_price: '/sapi/v1/ticker/price'
+            ticker_price: '/sapi/v1/ticker/price',
           }
         end
       end
