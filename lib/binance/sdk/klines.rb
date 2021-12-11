@@ -18,7 +18,7 @@ module Binance
         #     "17928899.62484339" // Ignore.
         #   ]
         # ]
-        def data(symbol, interval = '5m', start_time = nil, end_time = nil, limit = nil, recvWindow: 5000)
+        def data(symbol, interval = '5m', start_time = nil, end_time = nil, limit = nil, recvWindow: 5000, force_float: false)
           timestamp = Configuration.timestamp
 
           params = {
@@ -31,11 +31,13 @@ module Binance
             limit: limit
           }
 
-          Request.send!(
+          response = Request.send!(
             api_key_type: :read_info, path: Endpoints.fetch(:klines),
             params: params.delete_if { |key, value| value.nil? },
             security_type: :user_data, api_key: Configuration.api_key, api_secret_key: Configuration.secret_key
           )
+
+          force_float ? response.map! { |i| i.map(&:to_f) } : response
         end
       end
     end
