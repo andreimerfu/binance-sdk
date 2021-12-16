@@ -9,7 +9,7 @@ module Binance
         end
 
         def localized(message)
-          code = message.to_s.match(/\d+/).to_s.to_i
+          code = message#.to_s.match(/\d+/).to_s.to_i
           case code
           when 1000 then Unknown
           when 1001 then Disconnected
@@ -55,6 +55,9 @@ module Binance
           when -1021 then TimestampOutsideRecvWindow
           when -4131 then CounterPartyBestPrice
           when -4005 then QuantityGreaterThanMaxQuantity
+          when -1117 then InvalidSide
+          when -4046 then NoNeedToChangeMarginType
+          when -4061 then IncorrectOrderPositionSide
           else Binance::SDK::Error
           end
         end
@@ -126,6 +129,8 @@ module Binance
       class InvalidCallbackRate < Error; end
       class QuantityGreaterThanMaxQuantity < Error; end
       class TimestampOutsideRecvWindow < Error; end
+      class NoNeedToChangeMarginType < Error; end
+      class IncorrectOrderPositionSide < Error; end
     end
   end
 end

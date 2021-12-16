@@ -20,7 +20,8 @@ module Binance
             ticker_price: '/fapi/v1/ticker/price',
             change_leverage: '/fapi/v1/leverage',
             long_short_ratio: '/futures/data/globalLongShortAccountRatio',
-            taker_buy_sell_volume: '/futures/data/takerlongshortRatio'
+            taker_buy_sell_volume: '/futures/data/takerlongshortRatio',
+            margin_type: '/fapi/v1/marginType'
           }
         end
 
