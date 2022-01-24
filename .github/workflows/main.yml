@@ -25,6 +25,7 @@ jobs:
     - name: Run tests
       run: bundle exec rspec
     - name: Release Gem
+      if: contains(github.ref, 'refs/tags/v')
       uses: cadwallion/publish-rubygems-action@master
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
