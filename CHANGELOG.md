@@ -1,5 +1,3 @@
-## [Unreleased]
+## v1.0.0
 
-## [0.1.0] - 2021-10-09
-
-- Initial release
+* Fully functional Futures API both REST and Websocket

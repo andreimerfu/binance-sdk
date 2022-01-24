@@ -10,17 +10,17 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Andrei Merfu"]
   spec.email         = ["andrei@amgital.com"]
 
-  spec.summary       = "Binance SDK Ruby"
-  spec.description   = "Binance SDK Ruby"
-  spec.homepage      = "https://amgital.com"
+  spec.summary       = "binance-sdk-#{Binance::SDK::VERSION}"
+  spec.description   = "Ruby SDK for Binance API"
+  spec.homepage      = "https://github.com/andreimerfu/binance-sdk"
   spec.license       = "MIT"
-  spec.required_ruby_version = ">= 2.4.0"
+  spec.required_ruby_version = ">= 3.1.0"
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
+  spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/amgital"
-  spec.metadata["changelog_uri"] = "https://amgital.com"
+  spec.metadata["source_code_uri"] = "https://github.com/andreimerfu/binance-sdk"
+  spec.metadata["changelog_uri"] = "https://github.com/andreimerfu/binance-sdk/changelog.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
