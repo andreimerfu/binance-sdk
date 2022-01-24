@@ -58,6 +58,7 @@ module Binance
           when -1117 then InvalidSide
           when -4046 then NoNeedToChangeMarginType
           when -4061 then IncorrectOrderPositionSide
+          when -1120 then InvalidInterval
           else Binance::SDK::Error
           end
         end
@@ -131,6 +132,7 @@ module Binance
       class TimestampOutsideRecvWindow < Error; end
       class NoNeedToChangeMarginType < Error; end
       class IncorrectOrderPositionSide < Error; end
+      class InvalidInterval < Error; end
     end
   end
 end

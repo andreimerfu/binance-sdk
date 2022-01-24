@@ -44,7 +44,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'eventmachine'
   spec.add_dependency 'dry-inflector'
 
-  spec.add_runtime_dependency 'activesupport'
+  spec.add_runtime_dependency 'activesupport', '~> 6.1.4'
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html
 end

@@ -40,6 +40,7 @@ module Binance
           else
             raise Error.new(message: "invalid http method used: #{method}")
           end
+
           process!(response: response || "{}")
         end
 

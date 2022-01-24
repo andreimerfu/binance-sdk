@@ -1,8 +1,13 @@
-# Binance::Sdk
+# Binance SDK
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/binance/sdk`. To experiment with that code, run `bin/console` for an interactive prompt.
+Binance API interaction for Ruby.
 
-TODO: Delete this and the text above, and describe your gem
+Features supported:
+
+ |         |     Futures     |       Spot       |
+ | :---    |:----------------:|      ----: |
+ |Rest API | :white_check_mark:| :red_circle: |
+ |Websocket| :white_check_mark:| :red_circle: |
 
 ## Installation
 
@@ -22,7 +27,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+1. Config Binance API keys:
+   ```ruby
+    Binance::SDK::Configuration.api_key    = 'my_api_key'
+    Binance::SDK::Configuration.secret_key = 'my_secret_key'
+   ```
+2. Optional: Select testnet network (default main)
+   ```ruby
+    Binance::SDK::Configuration.testnet    = true
+   ```
+3. Optional: Set Futures API (default SPOT)
+   ```ruby
+    Binance::SDK::Configuration.futures    = true
+   ```
 
 ## Development
 
