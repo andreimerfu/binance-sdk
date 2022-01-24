@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    binance-sdk (1.0.5)
+    binance-sdk (1.0.6)
       activesupport (~> 6.1.4)
       awrence
       dry-inflector
