@@ -1,4 +1,4 @@
-# Binance SDK
+![Binance](assets/binance-logo.png)
 
 Binance API interaction for Ruby.
 
